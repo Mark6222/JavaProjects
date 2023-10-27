@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment1s4.HelloController">
+    <top>
+        <MenuBar fx:id="fileButton" prefHeight="4.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#OnFileButton" text="open image" />
+                        <MenuItem mnemonicParsing="false" onAction="#initial" text="initialize" />
+                  <MenuItem mnemonicParsing="false" onAction="#FindList" text="List" />
+                  <MenuItem mnemonicParsing="false" onAction="#numOfStars" text="numOfStars" />
+                  <MenuItem mnemonicParsing="false" text="example" />
+                  <MenuItem mnemonicParsing="false" onAction="#union" text="union" />
+                  <MenuItem mnemonicParsing="false" onAction="#rootStars" text="array2" />
+                  <MenuItem mnemonicParsing="false" onAction="#colourTheStars" text="ColorTheStars" />
+                  <MenuItem mnemonicParsing="false" text="test" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#toGrayScale" text="grayscale" />
+                        <MenuItem mnemonicParsing="false" onAction="#getBlueChannel" text="blueScale" />
+                        <MenuItem mnemonicParsing="false" onAction="#getGreenChannel" text="GreenScale" />
+                        <MenuItem mnemonicParsing="false" onAction="#getRedChannel" text="RedScale" />
+                  <MenuItem mnemonicParsing="false" onAction="#UnionFind" text="UnionFind" />
+                  <MenuItem mnemonicParsing="false" onAction="#circlesAndLabelling" text="circle" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                    <graphic>
+                        <Button mnemonicParsing="false" onAction="#exit1" text="Exit" />
+                    </graphic>
+                </Menu>
+            <Menu mnemonicParsing="false" text="circle">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#circlesAndLabelling" text="circle" />
+                  <MenuItem fx:id="ResetPos" mnemonicParsing="false" onAction="#circlesAndLabelling" text="resetPos" />
+               </items>
+            </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <left>
+        <TabPane prefHeight="767.0" prefWidth="1279.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Untitled Tab 1">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="738.0" prefWidth="900.0">
+                            <children>
+                                <HBox layoutY="24.0">
+                                    <children>
+                                        <VBox alignment="CENTER">
+                                            <children>
+                                    <Group nodeOrientation="RIGHT_TO_LEFT">
+                                       <children>
+                                                      <ImageView fx:id="imageView" fitHeight="450.0" fitWidth="700.0" pickOnBounds="true" preserveRatio="true" scaleX="-1.0" />
+                                          <Pane fx:id="circles" prefHeight="450.0" prefWidth="700.0" />
+                                          <Pane fx:id="Labelling" prefHeight="450.0" prefWidth="700.0" />
+                                       </children>
+                                    </Group>
+                                            </children>
+                                        </VBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="numOfStars" />
+                                    <RadioButton mnemonicParsing="false" onAction="#labelling" prefHeight="53.0" prefWidth="141.0" text="labelling" />
+                                    <Label text="Noise" />
+                                    <Slider fx:id="noise" max="1200.0" onDragDetected="#noiseManagement" value="150.0" />
+                                    <Label text="Colour:">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label text="0" />
+                                          <Slider fx:id="colour" max="255.0" onDragDetected="#toBlackWhiteScale" value="128.0" />
+                                          <Label text="255">
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#toBlackWhiteScale" text="Black&amp;White" />
+                                    <RadioButton mnemonicParsing="false" onAction="#circles" prefHeight="49.0" prefWidth="102.0" text="circles" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Untitled Tab 2">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox prefHeight="334.0" prefWidth="600.0">
+                                    <children>
+                                        <HBox alignment="CENTER" layoutX="10.0" layoutY="28.0" prefHeight="98.0" prefWidth="600.0">
+                                            <children>
+                                                <Label text="Name">
+                                                    <font>
+                                                        <Font name="Franklin Gothic Demi" size="36.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="fileLabel" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="135.0" prefWidth="600.0">
+                                            <children>
+                                                <Label text="Height">
+                                                    <font>
+                                                        <Font name="Franklin Gothic Demi" size="36.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="height">
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" />
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font size="36.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="125.0" prefWidth="600.0">
+                                            <children>
+                                                <Label text="Width">
+                                                    <font>
+                                                        <Font name="Franklin Gothic Demi" size="36.0" />
+                                                    </font>
+                                                </Label>
+                                                <Label fx:id="width">
+                                                    <HBox.margin>
+                                                        <Insets left="10.0" />
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Franklin Gothic Demi" size="36.0" />
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Untitled Tab">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <BarChart fx:id="histogram" layoutY="-1.0" prefHeight="338.0" prefWidth="600.0">
+                                    <xAxis>
+                                        <CategoryAxis endMargin="10.0" side="BOTTOM" startMargin="0.0" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis fx:id="" prefHeight="268.0" prefWidth="28.0" side="LEFT" />
+                                    </yAxis>
+                                </BarChart>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </left>
+</BorderPane>

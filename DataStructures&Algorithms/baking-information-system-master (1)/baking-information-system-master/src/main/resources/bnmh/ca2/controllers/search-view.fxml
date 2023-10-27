@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bnmh.ca2.controllers.SearchController">
+   <top>
+      <HBox alignment="CENTER" prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="searchText">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="searchButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#OnSearchButton" prefHeight="26.0" prefWidth="53.0" text="Search">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <RadioButton fx:id="nameRadio" mnemonicParsing="false" prefHeight="18.0" prefWidth="61.0" selected="true" text="Name">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </RadioButton>
+            <RadioButton fx:id="descriptionRadio" mnemonicParsing="false" text="Description">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </RadioButton>
+            <Button fx:id="backButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#OnBackButton" text="Back">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="bakedGoods" prefHeight="364.0" prefWidth="302.0" />
+            <ListView fx:id="ingredients" prefHeight="364.0" prefWidth="302.0" />
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

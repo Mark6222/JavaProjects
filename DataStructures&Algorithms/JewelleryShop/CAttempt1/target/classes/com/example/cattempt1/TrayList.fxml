@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cattempt1.TrayListController">
+   <right>
+      <VBox prefHeight="384.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#setOnButtonClickedHome" prefHeight="55.0" prefWidth="100.0" text="back">
+               <VBox.margin>
+                  <Insets top="150.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#setOnButtonClickedTray" prefHeight="51.0" prefWidth="103.0" text="addTray" />
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="46.0" prefWidth="62.0" text="Trays" underline="true">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="24.0" />
+               </font>
+            </Label>
+            <ListView fx:id="displayTrayList" onMousePressed="#setOnButtonClickedJewelleryList" prefHeight="359.0" prefWidth="490.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </ListView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

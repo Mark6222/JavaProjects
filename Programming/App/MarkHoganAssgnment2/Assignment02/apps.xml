@@ -1,0 +1,69 @@
+<object-stream>
+  <list>
+    <models.EducationApp>
+      <developer>
+        <developerName>mark</developerName>
+        <developerWebsite>http</developerWebsite>
+      </developer>
+      <appName>game bad</appName>
+      <appSize>30.0</appSize>
+      <appVersion>70.0</appVersion>
+      <appCost>3.0</appCost>
+      <ratings>
+        <models.Rating>
+          <numberOfStars>4</numberOfStars>
+          <raterName>RickyW</raterName>
+          <ratingComment>Too expensive</ratingComment>
+        </models.Rating>
+      </ratings>
+      <level>0</level>
+    </models.EducationApp>
+    <models.GameApp>
+      <developer reference="../../models.EducationApp/developer"/>
+      <appName>overwatch</appName>
+      <appSize>40.0</appSize>
+      <appVersion>50.0</appVersion>
+      <appCost>2.0</appCost>
+      <ratings>
+        <models.Rating>
+          <numberOfStars>1</numberOfStars>
+          <raterName>Eve101</raterName>
+          <ratingComment>Great App</ratingComment>
+        </models.Rating>
+      </ratings>
+      <isMultiplayer>true</isMultiplayer>
+    </models.GameApp>
+    <models.ProductivityApp>
+      <developer reference="../../models.EducationApp/developer"/>
+      <appName>play game </appName>
+      <appSize>20.0</appSize>
+      <appVersion>10.0</appVersion>
+      <appCost>1.0</appCost>
+      <ratings>
+        <models.Rating>
+          <numberOfStars>4</numberOfStars>
+          <raterName>RickyW</raterName>
+          <ratingComment>Poor App</ratingComment>
+        </models.Rating>
+      </ratings>
+    </models.ProductivityApp>
+    <models.GameApp>
+      <developer>
+        <developerName>mark</developerName>
+        <developerWebsite>https</developerWebsite>
+      </developer>
+      <appName>seige</appName>
+      <appSize>40.0</appSize>
+      <appVersion>50.0</appVersion>
+      <appCost>1.1</appCost>
+      <ratings>
+        <models.Rating>
+          <numberOfStars>3</numberOfStars>
+          <raterName>RickyW</raterName>
+          <ratingComment>Really intuitive</ratingComment>
+        </models.Rating>
+      </ratings>
+      <isMultiplayer>true</isMultiplayer>
+    </models.GameApp>
+  </list>
+</object-stream>
